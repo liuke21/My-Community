@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Community</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/editormd.preview.min.css" />
+    <link rel="stylesheet" href="/css/editormd.css" />
+    <link rel="icon" href="/image/icon.jpeg" type="image/x-icon">
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="/css/community.css" />
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/js/comment.js" type="application/javascript" ></script>	
+	<script src="/js/editormd.js" type="application/javascript"></script>
+	<script src="/js/jquery.min.js" type="application/javascript" ></script>
+	<script src="/js/bootstrap.min.js" type="application/javascript" ></script>
+</head>
+<body style="background-color:#efefef">
+<div th:insert="~{navigation :: nav}"></div>
+
+<div class="row" style="margin-right:2%; margin-left: 2%;background-color:white;border-radius:1%">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9" style="border-right: 1px solid #e6e6e6;">
+  	<h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 发起</h2>
+  	<hr>
+  	<form action="/publicArticle" method="post">
+	  <div class="form-group">
+	  	<input type="hidden" name="question-id" value="0" th:if="${question==null}">
+	  	<input type="hidden" name="question-id" th:value="${question.id}" th:if="${question!=null}">
+	    <label for="title" >问题标题（简单扼要）:</label>
+	    <input type="text" class="form-control" id="title" name="title"  th:if="${question==null}" placeholder="问题标题	···">
+	    <input type="text" class="form-control" id="title" name="title" th:if="${question!=null}" th:value="${question.title}" placeholder="问题标题	···">
+	  </div>
+	  <div class="form-group"  id="question-editor">
+	    <label for="title" >问题补充（必填参考右提示）:</label>
+	   	<textarea id="description" name="description" cols="30" th:if="${question==null}" rows="10" style="display:none"></textarea>
+	    <textarea id="description" name="description" cols="30" th:if="${question!=null}" th:text="${question.description}" rows="10" style="display:none"></textarea>
+	  </div>
+	  <div class="form-group">
+	    <label for="title" >添加标签:</label>
+	    <input type="text" class="form-control" id="tag" name="tag" th:if="${question==null}"  placeholder="输入标签，以逗号隔开">
+	    <input type="text" class="form-control" id="tag" name="tag" th:if="${question!=null}" th:value="${question.tag}"  placeholder="输入标签，以逗号隔开">
+	  </div>
+	  
+	  <button type="submit" class="btn btn-success" style="float:right;margin-bottom:15px" onclick="publisn_article()">发布</button>
+  	</form>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+  	<h3>问题发起指南</h3>
+  	· 问题标题：请用简洁的语言描述您发布的问题；
+  	· 问题补充：详细补充你的问题内容，并确保问题描述清晰直观，并提供相关资料；
+  	· 选择标签：选择一个或多个合适的标签，用逗号隔开；
+  </div>
+</div>
+<div class="footer">
+	<div>
+		Copyright © 2019 码问 · 
+		<a href="/">豫ICP备18020649号-2</a>
+		 · All Rights Reserved
+        Powered
+    
+	</div>
+</div>
+</body>
+</html>

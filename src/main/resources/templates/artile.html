@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Community</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" href="/image/icon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/editormd.preview.min.css" />
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="/css/article.css" />
+	<link rel="stylesheet" href="/css/community.css" />
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="/js/jquery.min.js" type="application/javascript" ></script>
+	<script src="/js/editormd.min.js" type="application/javascript"></script>
+	<script src="/js/lib/marked.min.js" type="application/javascript"></script>
+	<script src="/js/lib/prettify.min.js" type="application/javascript"></script>
+	<script src="/js/comment.js" type="application/javascript" ></script>
+	<script src="/js/sec_comment.js" type="application/javascript" ></script>
+	<script src="/js/bootstrap.min.js" type="application/javascript" ></script>
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+
+<div class="row" style="margin-right:2%; margin-left: 2%;background-color:white;border-radius:1%">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9" style="border-right: 1px solid #e6e6e6;">
+  	<h2 th:text="${questionDtos.title}"></h2>
+   	<span class="text-desc">作者：<span th:text="${questionDtos.autor}"></span> | 发布于： <span th:text="${#dates.format(questionDtos.gmt_create, 'yyyy-MM-dd HH:mm')}"></span> | 阅读数: <span th:text="${question.view_count}"></span></span>  	
+ 	<div th:if="${session.user!=null}">
+ 		<div class="glyphicon glyphicon-pencil edit-question" th:if="${session.user.name}==${questionDtos.autor}" style="float:right">
+ 		<a th:href="@{'/public/'+${questionDtos.id}}">编辑</a>
+ 	</div>
+ 	</div>
+ 	<hr>
+  	<div class="text" id="question-view" >
+  		<textarea style="display:none;" th:text="${questionDtos.description}"></textarea>
+  	</div>
+  	<hr>
+  	<span class="label label-success" th:text="${questionDtos.tag}">Success</span>
+  	<hr>
+  	<a th:href="@{'/artile/add_likeCount?id='+${questionDtos.id}+'&like_count='+${questionDtos.like_count}}">
+  		<span class="glyphicon glyphicon-heart a curs article_color"></span><span style="margin: 0px 10px 0px 6px;" th:text="${questionDtos.like_count}"></span>
+  	</a>
+  	<div class="comment" style="margin-top: 10px"><span th:text="${questionDtos.comment_count}"> </span>个评论</div>
+  	<hr>
+  	<div class="media" th:each="commentsDto:${commentsDto}">
+  		<div class="media-left">
+  			<a href=""><img class="media-object img-rounded" th:src="${commentsDto.getAvatar_url()}" ></a>
+  		</div>
+  		<div class="media-body">
+  			<p class="media-heading" style="font-size:12px"><a  th:text="${commentsDto.commentator}"></a></p>
+  			<div class="comment_content" style="font-size:14px">
+  				<span th:text="${commentsDto.content}" ></span>
+  			</div>
+  			<span class="glyphicon glyphicon-heart a curs article_color" ></span><span style="margin: 0px 10px 0px 6px;" th:text="${commentsDto.like_count}"></span>
+  			<span class="glyphicon glyphicon-comment a curs article_color"  th:data_id="${commentsDto.id}" onclick="add_comments(this)"></span><span style="margin: 0px 10px 0px 6px;" th:text="${commentsDto.coment_count}"></span>
+  			<div class="sec_comment" th:id="${'sec_comment'+commentsDto.id}" th:if="${session.user!=null}">
+  				<div class="media" th:each="SeccommentDto:${SeccommentsDto}" th:if=${SeccommentDto.comment_id==commentsDto.id&&SeccommentDto!=null}>
+  					<div class="media-left">
+			  			<a href=""><img class="media-object img-rounded" th:src="${SeccommentDto.getAvatar_url()}" ></a>
+			  		</div>
+  					<div class="media-body">
+			  			<p class="media-heading" style="font-size:10pxx"><a style="font-size:10px" th:text="${SeccommentDto.commentator}"></a></p>
+			  			
+			  				<span th:text="${SeccommentDto.content}" style="font-size:10px"></span>
+			  			
+			  			<span class="text-desc" style="float:right"><span th:text="${#dates.format(SeccommentDto.gmt_create, 'yyyy-MM-dd HH:mm')}">2020-03-11 20:34</span></span>
+			  		</div>
+			  		
+  				</div>
+  				<textarea  th:id="${'sec_comment_content'+commentsDto.id}" class="form-control" rows="3" style=" height: 50px;margin-bottom: 10px;width:80%;float:left"></textarea>
+  				<button type="button" class="btn btn-success" style="margin-bottom: 10px;float:right;margin-top: 1.4%;" th:data_id="${commentsDto.id}"  onclick="sec_comment(this)">提交</button>			
+  			</div>
+  			<div  th:id="${'comment-data'+commentsDto.id}">
+  			  	<span class="text-desc" style="float:right"><span th:text="${#dates.format(commentsDto.gmt_create, 'yyyy-MM-dd HH:mm')}">2020-03-11 20:34</span></span>
+  			</div>
+  			<hr>
+  		</div>
+  	</div>
+  	<p>提交评论</p>
+  	<hr>
+  	<div class="submit_comment" th:if="${session.user!=null}">
+  		<img alt="" th:src="${session.user.getAvatar_url()}" style="width:6%;border-radius:32%;margin: 10px 0;">
+	  	<input type="hidden" id="question_id" th:value="${questionDtos.id}" />
+	  	<textarea id="comment_content" class="form-control" rows="3" style=" height: 50%;margin-bottom: 10px;"></textarea>
+	  	<button type="button" class="btn btn-success" style="margin-bottom: 10px;float:right" onclick="comment()">提交</button>
+  	</div>
+  	<div class="submit_comment comment_login" th:if="${session.user==null}">
+  		<p>你还未登录，请登录了再评论
+  			<a href="https://gitee.com/oauth/authorize?client_id=55638affe2d21bafbeee7b8708a705d1ea2985a52e64eb4958d625874af2919f&redirect_uri=http://localhost:8080/callback&response_type=code">登录</a>
+		</p>
+	</div>
+   </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+  	<h3>发起人</h3>
+  	<img alt="" th:src="${questionDtos.getAvatar_url()}" style="width:20%;border-radius:32%">
+  	<hr>
+  	<div >相关问题
+  		<div class="media" th:each="question:${questions}" style="margin-top: 15px">
+  		<div class="media-body">
+  			<h6 class="media-heading"><a th:href="@{'/artile?id='+${question.id}}" th:text="${question.title}"></a></h6>
+  		</div>
+  	</div>
+  	</div>
+  </div>
+</div>
+<div class="footer">
+	<div>
+		Copyright © 2019 码问 · 
+		<a href="/">豫ICP备18020649号-2</a>
+		 · All Rights Reserved
+        Powered
+    
+	</div>
+</div>
+<script type="text/javascript">
+$(function() {
+    editormd.markdownToHTML("question-view", {});
+});
+</script>
+</body>
+</html>

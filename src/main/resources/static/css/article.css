@@ -1,0 +1,22 @@
+.sec_comment{
+	height: 100px;
+    margin-top: 10px;
+    display:none;
+}
+a{
+	text-decoration:none;
+}
+.a:hover{
+	color:red !important;
+}
+.article_color{
+	color:#aa9797;
+}
+
+.curs{
+	cursor:pointer;
+}
+.comment_login{
+	text-align: center;
+    margin-bottom: 100px;
+}

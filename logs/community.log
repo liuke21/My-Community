@@ -1,0 +1,988 @@
+2020-03-19 12:18:45.636  INFO 14640 --- [restartedMain] com.lk.springApplication                 : Starting springApplication on liukeslaptop with PID 14640 (D:\Eclipsee\thyleaf\target\classes started by liuke in D:\Eclipsee\thyleaf)
+2020-03-19 12:18:45.641  INFO 14640 --- [restartedMain] com.lk.springApplication                 : The following profiles are active: dev
+2020-03-19 12:18:45.772  INFO 14640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-19 12:18:45.773  INFO 14640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-19 12:18:50.947  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-19 12:18:51.017  INFO 14640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-19 12:18:51.018  INFO 14640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-03-19 12:18:51.296  INFO 14640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-19 12:18:51.297  INFO 14640 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5524 ms
+2020-03-19 12:18:52.544  INFO 14640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-19 12:18:53.625  INFO 14640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-19 12:18:53.806  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-19 12:18:53.813  INFO 14640 --- [restartedMain] com.lk.springApplication                 : Started springApplication in 9.065 seconds (JVM running for 9.954)
+2020-03-19 12:19:14.482  INFO 14640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-19 12:19:14.483  INFO 14640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-19 12:19:14.497  INFO 14640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-03-19 12:19:14.609  INFO 14640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-19 12:19:14.619  WARN 14640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-03-19 12:19:15.961  INFO 14640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-19 12:19:15.976 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:19:16.057 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 12(Integer)
+2020-03-19 12:19:16.229 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:19:16.252 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:19:16.253 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 182(Long), 12(Integer)
+2020-03-19 12:19:16.412 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:19:16.414 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:19:16.415 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 意思(String), 0(Integer), 5(Integer)
+2020-03-19 12:19:16.421 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:19:16.423 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:16.424 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:16.429 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:16.443 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:19:16.444 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 12(Integer)
+2020-03-19 12:19:16.457 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 2
+2020-03-19 12:19:16.458 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:19:16.459 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 12(Integer)
+2020-03-19 12:19:16.463 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.CommentMapper.selectSecComments    : <==      Total: 5
+2020-03-19 12:19:16.464 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.465 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.468 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:16.481 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.482 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.485 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:16.486 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.486 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.490 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:16.492 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.492 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.495 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:16.496 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.496 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.499 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:16.500 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.500 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.503 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:16.504 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:19:16.505 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:19:16.507 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:19:20.369 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestion      : ==>  Preparing: Select * from question order by gmt_motified desc limit ?,? 
+2020-03-19 12:19:20.370 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestion      : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-19 12:19:20.377 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestion      : <==      Total: 10
+2020-03-19 12:19:20.378 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.379 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.381 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.382 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.383 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.386 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.388 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.388 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 猪是的念来过倒(String)
+2020-03-19 12:19:20.391 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.393 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.393 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.396 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.397 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.397 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.399 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.400 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.400 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.402 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.403 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.404 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.406 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.408 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.409 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.413 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.413 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.414 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.416 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.417 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:20.418 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:20.420 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:20.422 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionCount              : ==>  Preparing: Select count(1) from question 
+2020-03-19 12:19:20.422 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionCount              : ==> Parameters: 
+2020-03-19 12:19:20.440 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionCount              : <==      Total: 1
+2020-03-19 12:19:22.003 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:19:22.004 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:19:22.006 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:19:22.007 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:19:22.008 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 55(Long), 14(Integer)
+2020-03-19 12:19:22.020 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:19:22.021 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:19:22.022 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:19:22.024 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:19:22.025 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:22.025 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:22.027 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:22.028 DEBUG 14640 --- [http-nio-8080-exec-9] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:19:22.028 DEBUG 14640 --- [http-nio-8080-exec-9] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:19:22.029 DEBUG 14640 --- [http-nio-8080-exec-9] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:19:22.030 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:19:22.031 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:19:22.032 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:19:34.516 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:34.516 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:34.520 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:34.522 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.selectQuestion      : ==>  Preparing: Select * from question order by gmt_motified desc limit ?,? 
+2020-03-19 12:19:34.523 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.selectQuestion      : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-19 12:19:34.532 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.selectQuestion      : <==      Total: 10
+2020-03-19 12:19:34.533 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.534 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.537 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.538 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.539 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.541 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.543 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.543 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 猪是的念来过倒(String)
+2020-03-19 12:19:34.545 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.546 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.547 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.549 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.555 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.556 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.558 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.559 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.559 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.562 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.562 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.563 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.564 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.565 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.566 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.568 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.568 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.569 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.571 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.572 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:19:34.573 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:19:34.575 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:19:34.575 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.Q.selectQuestionCount              : ==>  Preparing: Select count(1) from question 
+2020-03-19 12:19:34.576 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.Q.selectQuestionCount              : ==> Parameters: 
+2020-03-19 12:19:34.595 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.Q.selectQuestionCount              : <==      Total: 1
+2020-03-19 12:19:34.947 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:34.948 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:34.950 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.048 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.049 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.052 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.077 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.078 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.080 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.269 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.270 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.271 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.275 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.276 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.278 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.379 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.380 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.382 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.386 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.387 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.389 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:19:35.437 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:19:35.438 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:19:35.440 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.406 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.407 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.410 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.411 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:20:24.412 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 12(Integer)
+2020-03-19 12:20:24.414 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:20:24.415 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:20:24.416 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 183(Long), 12(Integer)
+2020-03-19 12:20:24.428 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:20:24.429 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:20:24.429 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 意思(String), 0(Integer), 5(Integer)
+2020-03-19 12:20:24.431 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:20:24.432 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:24.432 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:24.434 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:24.435 DEBUG 14640 --- [http-nio-8080-exec-4] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:20:24.435 DEBUG 14640 --- [http-nio-8080-exec-4] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 12(Integer)
+2020-03-19 12:20:24.438 DEBUG 14640 --- [http-nio-8080-exec-4] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 2
+2020-03-19 12:20:24.439 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:20:24.439 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 12(Integer)
+2020-03-19 12:20:24.442 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.CommentMapper.selectSecComments    : <==      Total: 5
+2020-03-19 12:20:24.443 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.444 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.445 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.446 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.447 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.449 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.450 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.450 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.454 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.454 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.455 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.456 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.457 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.457 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.459 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.459 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.460 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.461 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.462 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:20:24.462 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:20:24.464 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:20:24.572 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.573 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.575 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.578 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.579 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.581 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.695 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.696 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.698 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.705 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.705 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.707 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.877 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.878 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.880 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.979 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.979 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.981 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:24.988 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:24.988 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:24.990 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:25.089 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:25.090 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:25.091 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:25.096 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:25.096 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:25.098 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.174 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.175 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.177 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.178 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.selectQuestion      : ==>  Preparing: Select * from question order by gmt_motified desc limit ?,? 
+2020-03-19 12:20:31.179 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.selectQuestion      : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-19 12:20:31.182 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.selectQuestion      : <==      Total: 10
+2020-03-19 12:20:31.183 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.183 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.185 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.185 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.186 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.187 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.189 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.189 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 猪是的念来过倒(String)
+2020-03-19 12:20:31.191 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.192 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.192 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.194 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.195 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.195 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.196 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.197 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.197 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.198 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.199 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.199 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.201 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.202 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.203 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.205 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.205 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.206 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.208 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.208 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:31.209 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:31.210 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:31.211 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.Q.selectQuestionCount              : ==>  Preparing: Select count(1) from question 
+2020-03-19 12:20:31.211 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.Q.selectQuestionCount              : ==> Parameters: 
+2020-03-19 12:20:31.214 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.Q.selectQuestionCount              : <==      Total: 1
+2020-03-19 12:20:31.388 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.389 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.391 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.394 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.395 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.397 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.449 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.449 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.451 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.454 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.455 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.456 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.484 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.485 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.487 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:31.490 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:31.491 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:31.493 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.605 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.606 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.608 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.610 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:20:32.610 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:20:32.613 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:20:32.613 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:20:32.614 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 56(Long), 14(Integer)
+2020-03-19 12:20:32.621 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:20:32.621 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:20:32.622 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:20:32.624 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:20:32.624 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:20:32.625 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:20:32.627 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:20:32.628 DEBUG 14640 --- [http-nio-8080-exec-7] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:20:32.628 DEBUG 14640 --- [http-nio-8080-exec-7] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:20:32.629 DEBUG 14640 --- [http-nio-8080-exec-7] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:20:32.630 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:20:32.630 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:20:32.632 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:20:32.838 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.839 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.841 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.844 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.844 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.851 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.895 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.895 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.897 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.900 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.900 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.902 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.905 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.906 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.907 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.930 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.930 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.932 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:32.937 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:32.937 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:32.939 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.106 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.107 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.109 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.114 DEBUG 14640 --- [http-nio-8080-exec-3] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:20:48.114 DEBUG 14640 --- [http-nio-8080-exec-3] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:20:48.116 DEBUG 14640 --- [http-nio-8080-exec-3] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:20:48.239 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.240 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.241 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.245 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.245 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.247 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.300 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.301 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.304 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.308 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.308 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.310 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.327 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.328 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.330 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.333 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.334 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.335 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:48.474 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:48.475 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:48.476 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:53.377 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:53.377 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:53.379 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:20:59.386 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:20:59.386 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:20:59.388 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:47.712 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:47.713 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:47.715 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:52.874 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:52.874 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:52.876 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:52.881 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.QuestionMapper.editQuestion  : ==>  Preparing: update question set title=?,description=?,tag=?,gmt_create=?,gmt_motified=? where id=? 
+2020-03-19 12:21:52.882 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.QuestionMapper.editQuestion  : ==> Parameters: 第一个上传的照片(String), ![](http://192.168.1.101:8080/image/1532148006777.jpg)![](http://192.168.1.101:8080/image/23-20-22-15878701_1.jpg)(String), 照片(String), 1584591712880(Long), 1584591712880(Long), 14(Integer)
+2020-03-19 12:21:52.892 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.QuestionMapper.editQuestion  : <==    Updates: 1
+2020-03-19 12:21:52.904 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:52.905 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:52.907 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:52.908 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestion      : ==>  Preparing: Select * from question order by gmt_motified desc limit ?,? 
+2020-03-19 12:21:52.908 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestion      : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-19 12:21:52.911 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.QuestionMapper.selectQuestion      : <==      Total: 10
+2020-03-19 12:21:52.911 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.912 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.913 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.914 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.914 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.915 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.916 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.916 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 猪是的念来过倒(String)
+2020-03-19 12:21:52.918 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.919 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.919 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.921 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.921 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.922 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.923 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.924 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.924 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.925 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.926 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.926 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.928 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.928 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.928 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.930 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.930 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.931 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.933 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.935 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:52.936 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:52.938 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:52.938 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionCount              : ==>  Preparing: Select count(1) from question 
+2020-03-19 12:21:52.939 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionCount              : ==> Parameters: 
+2020-03-19 12:21:53.058 DEBUG 14640 --- [http-nio-8080-exec-7] c.l.M.Q.selectQuestionCount              : <==      Total: 1
+2020-03-19 12:21:53.241 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:53.242 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:53.244 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:53.248 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:53.249 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:53.250 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:53.306 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:53.307 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:53.308 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:53.313 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:53.313 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:53.315 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:53.386 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:53.387 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:53.389 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:53.395 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:53.395 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:53.397 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.328 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.328 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.330 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.331 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:21:55.331 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:21:55.333 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:21:55.334 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:21:55.334 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 57(Long), 14(Integer)
+2020-03-19 12:21:55.341 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:21:55.342 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:21:55.342 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:21:55.344 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:21:55.344 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:21:55.344 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:21:55.346 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:21:55.346 DEBUG 14640 --- [http-nio-8080-exec-5] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:21:55.346 DEBUG 14640 --- [http-nio-8080-exec-5] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:21:55.347 DEBUG 14640 --- [http-nio-8080-exec-5] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:21:55.348 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:21:55.348 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:21:55.349 DEBUG 14640 --- [http-nio-8080-exec-5] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:21:55.514 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.515 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.516 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.521 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.521 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.522 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.559 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.560 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.561 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.589 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.589 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.591 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.594 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.594 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.596 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.615 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.616 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.618 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:21:55.622 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:21:55.622 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:21:55.623 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:22:14.626 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:22:14.627 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:22:14.628 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:22:14.629 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:22:14.629 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 58(Long), 14(Integer)
+2020-03-19 12:22:14.657 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:22:14.658 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:22:14.658 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:22:14.660 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:22:14.660 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:22:14.660 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:22:14.662 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:22:14.663 DEBUG 14640 --- [http-nio-8080-exec-8] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:22:14.663 DEBUG 14640 --- [http-nio-8080-exec-8] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:22:14.664 DEBUG 14640 --- [http-nio-8080-exec-8] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:22:14.664 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:22:14.665 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:22:14.666 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:23:19.421 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.421 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.423 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.424 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.addUser         : ==>  Preparing: update user set token=? where name=? 
+2020-03-19 12:23:19.424 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.addUser         : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String), 可及(String)
+2020-03-19 12:23:19.431 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.addUser         : <==    Updates: 1
+2020-03-19 12:23:19.472 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.472 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.474 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.476 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.QuestionMapper.selectQuestion      : ==>  Preparing: Select * from question order by gmt_motified desc limit ?,? 
+2020-03-19 12:23:19.477 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.QuestionMapper.selectQuestion      : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-19 12:23:19.479 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.QuestionMapper.selectQuestion      : <==      Total: 10
+2020-03-19 12:23:19.480 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.480 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.481 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.481 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.482 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.483 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.483 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.483 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 猪是的念来过倒(String)
+2020-03-19 12:23:19.484 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.485 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.485 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.486 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.487 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.487 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.488 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.489 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.489 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.490 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.490 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.491 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.492 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.492 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.492 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.494 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.494 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.494 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.496 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.496 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:19.496 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:19.497 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:19.498 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.Q.selectQuestionCount              : ==>  Preparing: Select count(1) from question 
+2020-03-19 12:23:19.498 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.Q.selectQuestionCount              : ==> Parameters: 
+2020-03-19 12:23:19.500 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.Q.selectQuestionCount              : <==      Total: 1
+2020-03-19 12:23:19.580 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.580 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.581 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.587 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.587 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.588 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.664 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.664 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.666 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.670 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.670 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.671 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.718 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.718 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.719 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.723 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.723 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.724 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.746 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.746 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.748 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.751 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.751 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.753 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.765 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.765 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.768 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:19.771 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:19.772 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:19.773 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.511 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.511 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.512 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.513 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:23:21.513 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:23:21.514 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:23:21.515 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:23:21.515 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 59(Long), 14(Integer)
+2020-03-19 12:23:21.520 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:23:21.520 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:23:21.520 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:23:21.522 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:23:21.522 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:23:21.522 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:23:21.523 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:23:21.524 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:23:21.524 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:23:21.525 DEBUG 14640 --- [http-nio-8080-exec-1] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:23:21.525 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:23:21.526 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:23:21.527 DEBUG 14640 --- [http-nio-8080-exec-1] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:23:21.632 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.632 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.634 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.638 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.639 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.640 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.642 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.643 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.644 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.670 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.670 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.671 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.674 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.674 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.676 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.731 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.732 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.733 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.735 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.735 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.737 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.754 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.754 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.756 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:21.759 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:21.759 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:21.761 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.507 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.507 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.508 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.509 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:23:22.509 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:23:22.510 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:23:22.540 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.541 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.542 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.612 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.612 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.613 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.903 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.903 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.904 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.906 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.907 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.909 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.909 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.909 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.912 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.979 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.980 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.981 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.982 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.982 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.983 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:22.983 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:22.983 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:22.985 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:23.064 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:23.065 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:23.066 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:23.068 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:23.069 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:23.070 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:23.102 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:23.102 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:23.103 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:23.105 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:23.105 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:23.106 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:23:34.860 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:23:34.861 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:23:34.862 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.444 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.445 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.446 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.446 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:24:02.447 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:24:02.448 DEBUG 14640 --- [http-nio-8080-exec-10] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:24:02.516 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.516 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.517 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.520 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.520 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.521 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.551 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.552 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.553 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.556 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.556 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.558 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.583 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.583 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.585 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.588 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.588 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.589 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.618 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.618 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.620 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:02.623 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:02.623 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:02.624 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:23.405 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:23.405 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:23.406 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:34.057 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:34.057 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:34.059 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:36.799 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:36.800 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:36.801 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.040 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.040 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.041 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.042 DEBUG 14640 --- [http-nio-8080-exec-7] c.lk.Mapper.QuestionMapper.editQuestion  : ==>  Preparing: update question set title=?,description=?,tag=?,gmt_create=?,gmt_motified=? where id=? 
+2020-03-19 12:24:39.043 DEBUG 14640 --- [http-nio-8080-exec-7] c.lk.Mapper.QuestionMapper.editQuestion  : ==> Parameters: 第一个上传的照片(String), ![](http://192.168.1.101:8080/image/C33039C8-A9B0-466A-A339-AC6369AAA462.jpeg)(String), 照片(String), 1584591879042(Long), 1584591879042(Long), 14(Integer)
+2020-03-19 12:24:39.053 DEBUG 14640 --- [http-nio-8080-exec-7] c.lk.Mapper.QuestionMapper.editQuestion  : <==    Updates: 1
+2020-03-19 12:24:39.082 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.083 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.084 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.085 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.selectQuestion      : ==>  Preparing: Select * from question order by gmt_motified desc limit ?,? 
+2020-03-19 12:24:39.085 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.selectQuestion      : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-19 12:24:39.088 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.QuestionMapper.selectQuestion      : <==      Total: 10
+2020-03-19 12:24:39.089 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.089 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.090 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.091 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.091 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.092 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.092 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.093 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 猪是的念来过倒(String)
+2020-03-19 12:24:39.094 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.094 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.094 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.095 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.096 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.096 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.097 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.098 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.098 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.099 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.100 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.100 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.101 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.102 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.102 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.103 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.103 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.104 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.105 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.105 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:39.106 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:39.107 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:39.107 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.Q.selectQuestionCount              : ==>  Preparing: Select count(1) from question 
+2020-03-19 12:24:39.107 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.Q.selectQuestionCount              : ==> Parameters: 
+2020-03-19 12:24:39.110 DEBUG 14640 --- [http-nio-8080-exec-9] c.l.M.Q.selectQuestionCount              : <==      Total: 1
+2020-03-19 12:24:39.175 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.175 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.176 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.180 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.180 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.181 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.194 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.195 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.196 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.200 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.200 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.201 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.218 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.218 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.219 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.222 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.223 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.224 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.236 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.236 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.237 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:39.240 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:39.240 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:39.241 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:42.634 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.635 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.636 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.637 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:24:42.638 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:24:42.639 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:24:42.640 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:24:42.640 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 60(Long), 14(Integer)
+2020-03-19 12:24:42.646 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:24:42.646 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:24:42.647 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:24:42.648 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:24:42.650 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:42.650 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:42.652 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:42.653 DEBUG 14640 --- [http-nio-8080-exec-4] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:24:42.653 DEBUG 14640 --- [http-nio-8080-exec-4] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:24:42.654 DEBUG 14640 --- [http-nio-8080-exec-4] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:24:42.654 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:24:42.655 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:24:42.656 DEBUG 14640 --- [http-nio-8080-exec-4] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:24:42.744 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.744 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.746 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.746 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.746 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.746 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.746 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.747 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.748 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.906 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.907 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.908 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.910 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.911 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.912 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.993 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:42.993 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:42.994 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:42.999 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:43.000 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:43.001 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:43.004 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:43.004 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:43.005 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:43.079 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:43.080 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:43.080 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:43.083 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:43.083 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:43.085 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:43.178 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:43.179 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:43.180 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:24:45.208 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.208 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.209 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.210 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:24:45.210 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 14(Integer)
+2020-03-19 12:24:45.212 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:24:45.212 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:24:45.212 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 61(Long), 14(Integer)
+2020-03-19 12:24:45.217 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:24:45.218 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:24:45.218 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 照片(String), 0(Integer), 5(Integer)
+2020-03-19 12:24:45.219 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:24:45.220 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:24:45.220 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:24:45.221 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:24:45.222 DEBUG 14640 --- [http-nio-8080-exec-2] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:24:45.222 DEBUG 14640 --- [http-nio-8080-exec-2] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 14(Integer)
+2020-03-19 12:24:45.223 DEBUG 14640 --- [http-nio-8080-exec-2] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 0
+2020-03-19 12:24:45.223 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:24:45.223 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 14(Integer)
+2020-03-19 12:24:45.224 DEBUG 14640 --- [http-nio-8080-exec-2] c.l.M.CommentMapper.selectSecComments    : <==      Total: 0
+2020-03-19 12:24:45.304 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.304 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.306 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.310 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.310 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.311 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.313 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.314 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.315 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.327 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.327 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.328 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.330 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.331 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.332 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.350 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.350 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.351 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.353 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.354 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.355 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.368 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.369 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.370 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:45.372 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:45.373 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: c51b9e8a-12e8-4461-b12d-2125ad50859e(String)
+2020-03-19 12:24:45.374 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 1
+2020-03-19 12:24:54.073 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:24:54.073 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:24:54.078 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:48.985 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:48.985 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:48.987 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:48.989 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:26:48.991 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 12(Integer)
+2020-03-19 12:26:48.994 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:26:48.994 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.QuestionMapper.updateViewCount     : ==>  Preparing: update question set view_count=? where id=? 
+2020-03-19 12:26:48.995 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.QuestionMapper.updateViewCount     : ==> Parameters: 184(Long), 12(Integer)
+2020-03-19 12:26:49.003 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.QuestionMapper.updateViewCount     : <==    Updates: 1
+2020-03-19 12:26:49.003 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.Q.selectQuestionBySearch           : ==>  Preparing: Select * from question where title like CONCAT('%', ?, '%') limit ?,? 
+2020-03-19 12:26:49.004 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.Q.selectQuestionBySearch           : ==> Parameters: 意思(String), 0(Integer), 5(Integer)
+2020-03-19 12:26:49.005 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.Q.selectQuestionBySearch           : <==      Total: 1
+2020-03-19 12:26:49.005 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.seUserByAutor   : ==>  Preparing: select * from user where name=? 
+2020-03-19 12:26:49.006 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.seUserByAutor   : ==> Parameters: 可及(String)
+2020-03-19 12:26:49.007 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.seUserByAutor   : <==      Total: 1
+2020-03-19 12:26:49.008 DEBUG 14640 --- [http-nio-8080-exec-6] c.lk.Mapper.CommentMapper.selectComment  : ==>  Preparing: select * from comment where question_id=? and type=1 order by gmt_create desc 
+2020-03-19 12:26:49.008 DEBUG 14640 --- [http-nio-8080-exec-6] c.lk.Mapper.CommentMapper.selectComment  : ==> Parameters: 12(Integer)
+2020-03-19 12:26:49.014 DEBUG 14640 --- [http-nio-8080-exec-6] c.lk.Mapper.CommentMapper.selectComment  : <==      Total: 2
+2020-03-19 12:26:49.015 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.CommentMapper.selectSecComments    : ==>  Preparing: select * from comment where question_id=? and type=2 order by gmt_create desc 
+2020-03-19 12:26:49.015 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.CommentMapper.selectSecComments    : ==> Parameters: 12(Integer)
+2020-03-19 12:26:49.020 DEBUG 14640 --- [http-nio-8080-exec-6] c.l.M.CommentMapper.selectSecComments    : <==      Total: 5
+2020-03-19 12:26:49.021 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.021 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.024 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.025 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.025 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.027 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.035 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.035 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.037 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.037 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.038 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.039 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.039 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.040 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.041 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.041 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.042 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.043 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.043 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==>  Preparing: select * from user where id=? 
+2020-03-19 12:26:49.043 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : ==> Parameters: 10(Integer)
+2020-03-19 12:26:49.045 DEBUG 14640 --- [http-nio-8080-exec-6] com.lk.Mapper.userMapper.selectUserById  : <==      Total: 1
+2020-03-19 12:26:49.236 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.237 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.238 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:49.242 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.242 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.244 DEBUG 14640 --- [http-nio-8080-exec-9] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:49.402 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.402 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.403 DEBUG 14640 --- [http-nio-8080-exec-3] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:49.435 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.436 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.437 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:49.441 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.441 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.443 DEBUG 14640 --- [http-nio-8080-exec-5] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:49.462 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.463 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.464 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:49.470 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:49.470 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:49.472 DEBUG 14640 --- [http-nio-8080-exec-2] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:51.952 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:51.953 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:51.954 DEBUG 14640 --- [http-nio-8080-exec-8] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:51.955 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.selectQuestionById  : ==>  Preparing: Select * from question where id=? 
+2020-03-19 12:26:51.956 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.selectQuestionById  : ==> Parameters: 12(Integer)
+2020-03-19 12:26:51.957 DEBUG 14640 --- [http-nio-8080-exec-8] c.l.M.QuestionMapper.selectQuestionById  : <==      Total: 1
+2020-03-19 12:26:52.075 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.076 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.077 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:52.079 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.079 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.081 DEBUG 14640 --- [http-nio-8080-exec-4] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:52.147 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.148 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.149 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:52.152 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.152 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.153 DEBUG 14640 --- [http-nio-8080-exec-1] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:52.187 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.188 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.189 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:52.191 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.192 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.193 DEBUG 14640 --- [http-nio-8080-exec-7] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:26:52.350 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==>  Preparing: select * from user where token=? 
+2020-03-19 12:26:52.350 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : ==> Parameters: 48724342-786f-4225-858c-ba39cda4b9f2(String)
+2020-03-19 12:26:52.352 DEBUG 14640 --- [http-nio-8080-exec-10] com.lk.Mapper.userMapper.selectUser      : <==      Total: 0
+2020-03-19 12:27:36.761  INFO 14640 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-19 12:27:36.762  INFO 14640 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-03-19 12:27:36.785  INFO 14640 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-03-19 12:27:37.529  INFO 14640 --- [restartedMain] com.lk.springApplication                 : Starting springApplication on liukeslaptop with PID 14640 (D:\Eclipsee\thyleaf\target\classes started by liuke in D:\Eclipsee\thyleaf)
+2020-03-19 12:27:37.529  INFO 14640 --- [restartedMain] com.lk.springApplication                 : The following profiles are active: dev
+2020-03-19 12:27:38.819  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-19 12:27:38.827  INFO 14640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-19 12:27:38.828  INFO 14640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-03-19 12:27:38.964  INFO 14640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-19 12:27:38.964  INFO 14640 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1430 ms
+2020-03-19 12:27:39.734  INFO 14640 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-19 12:27:40.233  INFO 14640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-19 12:27:40.288  INFO 14640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-19 12:27:40.289  INFO 14640 --- [restartedMain] com.lk.springApplication                 : Started springApplication in 2.84 seconds (JVM running for 536.431)
+2020-03-19 12:27:40.294  INFO 14640 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

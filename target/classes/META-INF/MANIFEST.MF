@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: thyleaf
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: liuke
+Implementation-Vendor-Id: com.lk.thyleaf
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/thyleaf
+Created-By: Maven Integration for Eclipse
+
